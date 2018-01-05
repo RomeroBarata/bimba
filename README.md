@@ -25,10 +25,11 @@ library(bimba)
 Many over-sampling, under-sampling, and hybrid algorithms are available. In addition, the algorithms can be easily chained using the `sampling_sequence` function. A complete list of the algorithms, broken down by their type, is available below.
 
 ### Over-Sampling
-- `ROS`: Random Over-Sampling.
+- `ROS`: Random Over-Sampling
+- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [1]
 
 ### Under-Sampling
-- `RUS`: Random Under-Sampling.
+- `RUS`: Random Under-Sampling
 
 ## Related Packages
 Although several other packages implement sampling algorithms they differ to `bimba` in a few ways. Below is a non-exhaustive list of related packages 
@@ -39,3 +40,5 @@ broken down by languages.
 ### R
 
 ## References
+[1] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
+**SMOTE: synthetic minority over-sampling technique**. _Journal of artificial intelligence research_, _16_, 321-357.
