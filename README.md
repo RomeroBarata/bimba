@@ -26,9 +26,10 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 
 ### Over-Sampling
 - `ROS`: Random Over-Sampling
-- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [1]
+- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [2]
 
 ### Under-Sampling
+- `ENN`: Edited Nearest Neighbours [1]
 - `RUS`: Random Under-Sampling
 
 ## Related Packages
@@ -40,5 +41,9 @@ broken down by languages.
 ### R
 
 ## References
-[1] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
+[1] Wilson, D. L. (1972). **Asymptotic properties of nearest neighbor rules 
+using edited data**. _IEEE Transactions on Systems, Man, and Cybernetics_, 
+_2_(3), 408-421.
+
+[2] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
 **SMOTE: synthetic minority over-sampling technique**. _Journal of artificial intelligence research_, _16_, 321-357.
