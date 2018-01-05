@@ -1,0 +1,24 @@
+Package: bimba
+Version: 0.0.0.9000
+Title: Sampling Algorithms for Two-Class Imbalanced Data Sets
+Description: Sampling algorithms to aid classifiers in learning from two-class 
+    imbalanced data sets. Over-sampling, under-sampling, and hybrid 
+    algorithms are included. In addition, sampling algorithms that are 
+    composed of a sequence of already existing algorithms can be easily 
+    created.
+Authors@R: person("Romero", "Morais", email = "romero.barata@gmail.com",
+                  role = c("aut", "cre"))
+URL: https://github.com/RomeroBarata/bimba
+BugReports: https://github.com/RomeroBarata/bimba/issues
+License: MIT + file LICENSE
+LazyData: true
+Imports:
+    kknn (>= 1.3.1)
+Suggests: 
+    knitr,
+    MASS (>= 7.3-48),
+    rmarkdown
+Depends:
+    R (>= 3.3.0)
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
