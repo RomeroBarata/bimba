@@ -8,7 +8,7 @@
 #' the user can modify this and select to remove only examples from the 
 #' minority class or remove examples from both classes.
 #' 
-#' @inheritParams SMOTE
+#' @inheritParams KMUS
 #' @param remove_class Examples from \code{remove_class} are removed. The 
 #'  options are: \code{c("Majority", "Minority", "Both")}.
 #' @param k Number of nearest neighbours to take into account.
