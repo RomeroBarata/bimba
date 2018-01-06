@@ -26,16 +26,17 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 
 ### Over-Sampling
 - `ROS`: Random Over-Sampling
-- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [2]
+- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [3]
 
 ### Under-Sampling
 - `ENN`: Edited Nearest Neighbours [1]
 - `KMUS`: _k_-Means Under-Sampling
 - `RUS`: Random Under-Sampling
+- `TL`: Tomek Links [2]
 
 ### Misc
-- `sampling_sequence`: Convenience function to apply a chain of sampling 
-algorithms to a data set
+- `sampling_sequence`: Convenience function to chain sampling algorithms 
+together
 
 ## Related Packages
 Although several other packages implement sampling algorithms they differ to `bimba` in a few ways. Below is a non-exhaustive list of related packages 
@@ -50,5 +51,8 @@ broken down by languages.
 using edited data**. _IEEE Transactions on Systems, Man, and Cybernetics_, 
 _2_(3), 408-421.
 
-[2] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
+[2] Tomek, I. (1976). **An experiment with the edited nearest-neighbor rule**. 
+_IEEE Transactions on systems, Man, and Cybernetics_, (6), 448-452.
+
+[3] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
 **SMOTE: synthetic minority over-sampling technique**. _Journal of artificial intelligence research_, _16_, 321-357.
