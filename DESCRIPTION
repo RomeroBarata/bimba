@@ -15,9 +15,11 @@ LazyData: true
 Imports:
     kknn (>= 1.3.1)
 Suggests: 
+    caret (>= 6.0-78),
     knitr,
     MASS (>= 7.3-48),
-    rmarkdown
+    rmarkdown,
+    stats (>= 3.4.3)
 Depends:
     R (>= 3.3.0)
 VignetteBuilder: knitr

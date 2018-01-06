@@ -30,6 +30,7 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 
 ### Under-Sampling
 - `ENN`: Edited Nearest Neighbours [1]
+- `KMUS`: _k_-Means Under-Sampling
 - `RUS`: Random Under-Sampling
 
 ## Related Packages
