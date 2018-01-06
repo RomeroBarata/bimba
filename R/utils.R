@@ -168,3 +168,40 @@ synth_per_example <- function(sample_size, min_size){
   sample(c(lower_bound, upper_bound), size = min_size, 
          replace = TRUE, prob = c(1 - upper_bound_prob, upper_bound_prob))
 }
+
+center_and_scale <- function(X){
+  nzv_features <- caret::nearZeroVar(X, saveMetrics = TRUE)$nzv
+  X_nzv <- X[, nzv_features, drop = FALSE]
+  X_not_nzv <- X[, !nzv_features, drop = FALSE]
+  
+  X_not_nzv <- scale(X_not_nzv, center = TRUE, scale = TRUE)
+  center_not_nzv <- attr(X_not_nzv, "scaled:center")
+  sc_not_nzv <- attr(X_not_nzv, "scaled:scale")
+  
+  center <- vector("numeric", length = ncol(X))
+  center[nzv_features] <- 0
+  center[!nzv_features] <- center_not_nzv
+  
+  sc <- vector("numeric", length = ncol(X))
+  sc[nzv_features] <- 1
+  sc[!nzv_features] <- sc_not_nzv
+  
+  X[, !nzv_features] <- X_not_nzv
+  attr(X, "scaled:center") <- center
+  attr(X, "scaled:scale") <- sc
+  X
+}
+
+kmeans <- function(X, num_centers, max_iter = 100L, nstart = 10L){
+  X <- center_and_scale(X)
+  km <- stats::kmeans(X, 
+                      centers = num_centers,
+                      iter.max = max_iter,
+                      nstart = nstart)
+  
+  centers <- km$centers
+  centers <- sweep(centers, 2, attr(X, "scaled:scale"), "*")
+  centers <- sweep(centers, 2, attr(X, "scaled:center"), "+")
+  km$centers <- as.data.frame(centers)
+  km
+}
