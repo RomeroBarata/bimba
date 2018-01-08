@@ -25,6 +25,7 @@ library(bimba)
 Many over-sampling, under-sampling, and hybrid algorithms are available. In addition, the algorithms can be easily chained using the `sampling_sequence` function. A complete list of the algorithms, broken down by their type, is available below.
 
 ### Over-Sampling
+- `ADASYN`: Adaptive Synthetic Sampling [4]
 - `ROS`: Random Over-Sampling
 - `SMOTE`: Synthetic Minority Over-Sampling TEchnique [3]
 
@@ -56,3 +57,6 @@ _IEEE Transactions on systems, Man, and Cybernetics_, (6), 448-452.
 
 [3] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
 **SMOTE: synthetic minority over-sampling technique**. _Journal of artificial intelligence research_, _16_, 321-357.
+
+[4] He, H., Bai, Y., Garcia, E. A., & Li, S. (2008, June). **ADASYN: Adaptive synthetic sampling approach for imbalanced learning**. In _Neural Networks, 
+2008. IJCNN 2008.(IEEE World Congress on Computational Intelligence). IEEE International Joint Conference on_ (pp. 1322-1328). IEEE.
