@@ -137,27 +137,29 @@ knn <- function(data_train, data_test, k = 5, distance = 2,
   colnames(data_train)[last_col] <- "Class"
   colnames(data_test)[last_col] <- "Class"
   
+  result <- kknn::kknn(Class ~ .,
+                       train = data_train,
+                       test = data_test,
+                       k = k + 1,
+                       distance = distance,
+                       kernel = kernel,
+                       scale = TRUE)
+  
   if (remove_first_neighbour){
-    result <- kknn::kknn(Class ~ .,
-                         train = data_train,
-                         test = data_test,
-                         k = k + 1,
-                         distance = distance,
-                         kernel = kernel,
-                         scale = TRUE)
-    knn_indices <- result$C[, -1, drop = FALSE]
+    knn_indices <- 
+      if (nrow(data_test) == 1) t(result$C)[, -1, drop = FALSE]
+    else result$C[, -1, drop = FALSE]
+    
     knn_classes <- result$CL[, -1, drop = FALSE]
-    return(list(knn_indices = knn_indices, knn_classes = knn_classes))
   } else{
-    result <- kknn::kknn(Class ~ .,
-                         train = data_train,
-                         test = data_test,
-                         k = k,
-                         distance = distance,
-                         kernel = kernel,
-                         scale = TRUE)
-    return(list(knn_indices = result$C, knn_classes = result$CL))
+    knn_indices <- 
+      if (nrow(data_test) == 1) t(result$C)[, 1:k, drop = FALSE]
+    else result$C[, 1:k, drop = FALSE]
+    
+    knn_classes <- result$CL[, 1:k, drop = FALSE]
   }
+  
+  return(list(knn_indices = knn_indices, knn_classes = knn_classes))
 }
 
 synth_per_example <- function(sample_size, min_size){
