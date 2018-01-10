@@ -28,6 +28,7 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 - `ADASYN`: Adaptive Synthetic Sampling [5]
 - `BDLSMOTE`: borderline-SMOTE1 and borderline-SMOTE2 [4]
 - `ROS`: Random Over-Sampling
+- `RWO`: Random Walk Over-Sampling [7]
 - `SLSMOTE`: Safe-Level-SMOTE [6]
 - `SMOTE`: Synthetic Minority Over-Sampling TEchnique [3]
 
@@ -67,3 +68,6 @@ new over-sampling method in imbalanced data sets learning**. In _International C
 2008. IJCNN 2008.(IEEE World Congress on Computational Intelligence). IEEE International Joint Conference on_ (pp. 1322-1328). IEEE.
 
 [6] Bunkhumpornpat, C., Sinapiromsaran, K., & Lursinsap, C. (2009). **Safe-level-smote: Safe-level-synthetic minority over-sampling technique for handling the class imbalanced problem**. _Advances in knowledge discovery and data mining_, 475-482.
+
+[7] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
+99-116.
