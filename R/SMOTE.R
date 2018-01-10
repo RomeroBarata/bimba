@@ -68,6 +68,8 @@ synthesise_SMOTE <- function(data_min, sample_size, knn_indices, over_replace){
   deltas <- runif(sample_size, min = 0, max = 1)
   
   for (i in seq_len(min_size)){
+    if (p[i] == 0) next
+    
     selected_nns <- sample(1:k, size = p[i], replace = over_replace[i])
     nns_indices <- knn_indices[i, selected_nns]
     X_nns <- X_min[nns_indices, , drop = FALSE]

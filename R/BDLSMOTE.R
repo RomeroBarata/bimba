@@ -99,6 +99,8 @@ synthesise_BDLSMOTE1 <- function(data_danger, data_min, sample_size,
   start_indices <- end_indices - p + 1
   deltas <- runif(nrow(X_synth), min = 0, max = 1)
   for (i in seq_len(danger_size)){
+    if (p[i] == 0) next
+    
     selected_nns <- sample(1:k, size = p[i], replace = over_replace[i])
     nns_indices <- knn_indices[i, selected_nns]
     X_nns <- X_min[nns_indices, , drop = FALSE]
@@ -132,6 +134,8 @@ synthesise_BDLSMOTE2 <- function(data_danger, data, sample_size,
   end_indices <- cumsum(p)
   start_indices <- end_indices - p + 1
   for (i in seq_len(danger_size)){
+    if (p[i] == 0) next
+    
     selected_nns <- sample(1:k, size = p[i], replace = over_replace[i])
     nns_indices <- knn_indices[i, selected_nns]
     nns_classes <- knn_classes[i, selected_nns]
