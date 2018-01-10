@@ -27,8 +27,10 @@ SMOTE <- function(data, perc_min = 50, perc_over = NULL, k = 5,
   y <- data[[ncol(data)]]
   if (is.null(classes)) classes <- extract_classes(y)
   
-  maj_size <- length(which(y == classes[["Majority"]]))
-  min_size <- length(which(y == classes[["Minority"]]))
+  data_min <- data[y == classes[["Minority"]], , drop = FALSE]
+  
+  min_size <- nrow(data_min)
+  maj_size <- nrow(data) - min_size
   
   sample_size <- compute_oversample_size(majority_size = maj_size,
                                          minority_size = min_size,
@@ -36,7 +38,6 @@ SMOTE <- function(data, perc_min = 50, perc_over = NULL, k = 5,
                                          perc_over = perc_over)
   if (sample_size == 0) return(data)
   
-  data_min <- data[y == classes[["Minority"]], , drop = FALSE]
   knn_indices <- knn(data_train = data_min,
                      data_test = data_min,
                      k = k,

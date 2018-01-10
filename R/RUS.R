@@ -37,7 +37,7 @@ RUS <- function(data, perc_maj = 50, perc_under = NULL, classes = NULL){
   maj_idx <- which(y == classes[["Majority"]])
 
   maj_size <- length(maj_idx)
-  min_size <- sum(y == classes[["Minority"]])
+  min_size <- nrow(data) - maj_size
 
   sample_size <- compute_undersample_size(majority_size = maj_size,
                                           minority_size = min_size,

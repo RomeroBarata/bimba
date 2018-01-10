@@ -42,8 +42,8 @@ ROS <- function(data, perc_min = 50, perc_over = NULL, classes = NULL){
 
   min_idx <- which(y == classes[["Minority"]])
 
-  maj_size <- length(which(y == classes[["Majority"]]))
   min_size <- length(min_idx)
+  maj_size <- nrow(data) - min_size
 
   sample_size <- compute_oversample_size(majority_size = maj_size,
                                          minority_size = min_size,
