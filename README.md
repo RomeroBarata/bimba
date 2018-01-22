@@ -28,7 +28,7 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 - `ADASYN`: Adaptive Synthetic Sampling [5]
 - `BDLSMOTE`: borderline-SMOTE1 and borderline-SMOTE2 [4]
 - `ROS`: Random Over-Sampling
-- `RWO`: Random Walk Over-Sampling [7]
+- `RWO`: Random Walk Over-Sampling [8]
 - `SLSMOTE`: Safe-Level-SMOTE [6]
 - `SMOTE`: Synthetic Minority Over-Sampling TEchnique [3]
 
@@ -36,6 +36,7 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 - `ENN`: Edited Nearest Neighbours [1]
 - `KMUS`: _k_-Means Under-Sampling
 - `RUS`: Random Under-Sampling
+- `SBC`: Under-Sampling Based on Clustering [7]
 - `TL`: Tomek Links [2]
 
 ### Misc
@@ -69,5 +70,8 @@ new over-sampling method in imbalanced data sets learning**. In _International C
 
 [6] Bunkhumpornpat, C., Sinapiromsaran, K., & Lursinsap, C. (2009). **Safe-level-smote: Safe-level-synthetic minority over-sampling technique for handling the class imbalanced problem**. _Advances in knowledge discovery and data mining_, 475-482.
 
-[7] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
+[7] Yen, S. J., & Lee, Y. S. (2009). **Cluster-based under-sampling approaches for imbalanced data distributions**. _Expert Systems with Applications_, 
+_36_(3), 5718-5727.
+
+[8] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
 99-116.
