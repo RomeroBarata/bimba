@@ -27,8 +27,9 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 ### Over-Sampling
 - `ADASYN`: Adaptive Synthetic Sampling [5]
 - `BDLSMOTE`: borderline-SMOTE1 and borderline-SMOTE2 [4]
+- `MWMOTE`: Majority Weighted Minority Over-Sampling TEchnique [8]
 - `ROS`: Random Over-Sampling
-- `RWO`: Random Walk Over-Sampling [8]
+- `RWO`: Random Walk Over-Sampling [9]
 - `SLSMOTE`: Safe-Level-SMOTE [6]
 - `SMOTE`: Synthetic Minority Over-Sampling TEchnique [3]
 
@@ -73,5 +74,9 @@ new over-sampling method in imbalanced data sets learning**. In _International C
 [7] Yen, S. J., & Lee, Y. S. (2009). **Cluster-based under-sampling approaches for imbalanced data distributions**. _Expert Systems with Applications_, 
 _36_(3), 5718-5727.
 
-[8] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
+[8] Barua, S., Islam, M. M., Yao, X., & Murase, K. (2014). **MWMOTE--majority 
+weighted minority oversampling technique for imbalanced data set learning**. 
+_IEEE Transactions on Knowledge and Data Engineering_, _26_(2), 405-425.
+
+[9] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
 99-116.

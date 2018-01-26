@@ -207,3 +207,7 @@ kmeans <- function(X, num_centers, max_iter = 100L, nstart = 10L){
   km$centers <- as.data.frame(centers)
   km
 }
+
+euclidian_distance <- function(A, x){
+  sqrt(rowSums(sweep(A, 2, x, "-") ^ 2))
+}
