@@ -24,9 +24,15 @@
 #'  algorithms applied to the input data set.
 #' @export
 
-sampling_sequence <- function(data, algorithms, parameters, classes = NULL){
+sampling_sequence <- function(data, algorithms, parameters = NULL, 
+                              classes = NULL){
   y <- data[[ncol(data)]]
   if (is.null(classes)) classes <- extract_classes(y)
+  
+  if (is.null(parameters)){
+    parameters <- vector("list", length = length(algorithms))
+    for (i in seq_along(parameters)) parameters[[i]] <- list()
+  }
   
   for (i in seq_along(algorithms)){
     data <- do.call(algorithms[i],

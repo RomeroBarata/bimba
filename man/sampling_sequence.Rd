@@ -4,7 +4,7 @@
 \alias{sampling_sequence}
 \title{Chain sampling algorithms together.}
 \usage{
-sampling_sequence(data, algorithms, parameters, classes = NULL)
+sampling_sequence(data, algorithms, parameters = NULL, classes = NULL)
 }
 \arguments{
 \item{data}{A data frame containing the predictors and the outcome. 
