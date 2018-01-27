@@ -2,7 +2,7 @@
 ## Overview
 The `bimba` package implements a variety of sampling algorithms to reduce the imbalance present in many real world data sets. Although multi-class imbalanced data sets are common, `bimba` has been designed to work only with two-class imbalanced data sets.
 
-`bimba` is easy to learn and easy to use as all algorithms implemented share a similar structure.
+`bimba`'s main goal is to be **flexible** as its main use is for research purposes. In addition, as many over-sampling and under-sampling algorithms have a similar structure and several common hyperparameters, a lot of care was taken to ensure consistency between different functions, making `bimba` **intuitive** to use.
 
 ## Installation
 `bimba` is under active development and not yet available on CRAN. The 
@@ -39,6 +39,11 @@ Many over-sampling, under-sampling, and hybrid algorithms are available. In addi
 - `RUS`: Random Under-Sampling
 - `SBC`: Under-Sampling Based on Clustering [7]
 - `TL`: Tomek Links [2]
+
+### Cleaning
+- `NRAS`: Noise Reduction A Priori Synthetic Over-Sampling [10]
+
+To make `NRAS` more general its cleaning step has been decoupled from the over-sampling step.
 
 ### Misc
 - `sampling_sequence`: Convenience function to chain sampling algorithms 
@@ -80,3 +85,6 @@ _IEEE Transactions on Knowledge and Data Engineering_, _26_(2), 405-425.
 
 [9] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
 99-116.
+
+[10] Rivera, W. A. (2017). **Noise Reduction A Priori Synthetic Over-Sampling 
+for class imbalanced data sets**. _Information Sciences_, _408_, 146-161.

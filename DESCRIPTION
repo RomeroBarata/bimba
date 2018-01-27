@@ -17,6 +17,7 @@ Imports:
 Suggests: 
     caret (>= 6.0-78),
     knitr,
+    LiblineaR (>= 2.10-8),
     MASS (>= 7.3-48),
     rmarkdown,
     stats (>= 3.4.3)
