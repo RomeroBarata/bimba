@@ -16,9 +16,46 @@ devtools::install_github("RomeroBarata/bimba")
 ## Quick Tour
 
 ```r
-library(bimba)
+## Some nice setup for the graphics
+library(ggplot2)
+clean_theme <- theme_minimal() + theme(axis.title.x = element_blank(),
+                                       axis.title.y = element_blank())
+                                       
+## bimba in action
+sample_data <- generate_imbalanced_data(num_examples = 200L,
+                                        imbalance_ratio = 10,
+                                        noise_maj = 0,
+                                        noise_min = 0.04,
+                                        seed = 42)
+ggplot(sample_data, aes(x = V1, y = V2, colour = target)) + 
+  geom_point(size = 2) + clean_theme
 
+# Balance the distribution of examples using SMOTE
+smoted_data <- SMOTE(sample_data, perc_min = 50, k = 5)
+# Sanity check. Did it really balance?
+table(smoted_data$target)
+ggplot(smoted_data, aes(x = V1, y = V2, colour = target)) + 
+  geom_point(size = 2) + clean_theme
 
+# SMOTE is not robust to noisy minority examples. Lets add a cleaning step 
+# to the minority class before using SMOTE.
+ssed_data <- sampling_sequence(sample_data, algorithms = c("NRAS", "SMOTE"))
+ggplot(ssed_data, aes(x = V1, y = V2, colour = target)) + 
+  geom_point(size = 2) + clean_theme
+
+# Clean using ENN, double the size of the minority class using SMOTE, and 
+# balance the distribution using RUS.
+algorithms <- c("ENN", "SMOTE", "RUS")
+parameters <- list(
+  ENN = list(remove_class = "Minority", k = 3),
+  SMOTE = list(perc_over = 100, k = 5),
+  RUS = list(perc_maj = 50)
+)
+
+ssed2_data <- sampling_sequence(sample_data, algorithms = algorithms, 
+                                parameters = parameters)
+ggplot(ssed2_data, aes(x = V1, y = V2, colour = target)) + 
+  geom_point(size = 2) + clean_theme
 ```
 
 ## Available Algorithms
