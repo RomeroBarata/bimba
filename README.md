@@ -22,6 +22,7 @@ clean_theme <- theme_minimal() + theme(axis.title.x = element_blank(),
                                        axis.title.y = element_blank())
                                        
 ## bimba in action
+library(bimba)
 sample_data <- generate_imbalanced_data(num_examples = 200L,
                                         imbalance_ratio = 10,
                                         noise_maj = 0,
@@ -62,24 +63,25 @@ ggplot(ssed2_data, aes(x = V1, y = V2, colour = target)) +
 Many over-sampling, under-sampling, and hybrid algorithms are available. In addition, the algorithms can be easily chained using the `sampling_sequence` function. A complete list of the algorithms, broken down by their type, is available below.
 
 ### Over-Sampling
-- `ADASYN`: Adaptive Synthetic Sampling [6]
-- `BDLSMOTE`: borderline-SMOTE1 and borderline-SMOTE2 [5]
-- `MWMOTE`: Majority Weighted Minority Over-Sampling TEchnique [9]
+- `ADASYN`: Adaptive Synthetic Sampling [7]
+- `BDLSMOTE`: borderline-SMOTE1 and borderline-SMOTE2 [6]
+- `MWMOTE`: Majority Weighted Minority Over-Sampling TEchnique [10]
 - `ROS`: Random Over-Sampling
-- `RWO`: Random Walk Over-Sampling [10]
-- `SLSMOTE`: Safe-Level-SMOTE [7]
-- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [4]
+- `RWO`: Random Walk Over-Sampling [11]
+- `SLSMOTE`: Safe-Level-SMOTE [8]
+- `SMOTE`: Synthetic Minority Over-Sampling TEchnique [5]
 
 ### Under-Sampling
 - `ENN`: Edited Nearest Neighbours [1]
 - `KMUS`: _k_-Means Under-Sampling
+- `NCL`: Neighbourhood Cleaning Rule [4]
 - `OSS`: One-Sided Selection [3]
 - `RUS`: Random Under-Sampling
-- `SBC`: Under-Sampling Based on Clustering [8]
+- `SBC`: Under-Sampling Based on Clustering [9]
 - `TL`: Tomek Links [2]
 
 ### Cleaning
-- `NRAS`: Noise Reduction A Priori Synthetic Over-Sampling [10]
+- `NRAS`: Noise Reduction A Priori Synthetic Over-Sampling [12]
 
 To make `NRAS` more general its cleaning step has been decoupled from the over-sampling step.
 
@@ -105,26 +107,28 @@ _IEEE Transactions on systems, Man, and Cybernetics_, (6), 448-452.
 
 [3] Kubat, M., & Matwin, S. (1997, July). **Addressing the curse of imbalanced training sets: one-sided selection**. In _ICML_ (Vol. 97, pp. 179-186).
 
-[4] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
+[4] Laurikkala, J. (2001, July). **Improving identification of difficult small classes by balancing class distribution**. In __Conference on Artificial Intelligence in Medicine in Europe__ (pp. 63-66). Springer, Berlin, Heidelberg.
+
+[5] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
 **SMOTE: synthetic minority over-sampling technique**. _Journal of artificial intelligence research_, _16_, 321-357.
 
-[5] Han, H., Wang, W. Y., & Mao, B. H. (2005, August). **Borderline-SMOTE: a 
+[6] Han, H., Wang, W. Y., & Mao, B. H. (2005, August). **Borderline-SMOTE: a 
 new over-sampling method in imbalanced data sets learning**. In _International Conference on Intelligent Computing_ (pp. 878-887). Springer Berlin Heidelberg.
 
-[6] He, H., Bai, Y., Garcia, E. A., & Li, S. (2008, June). **ADASYN: Adaptive synthetic sampling approach for imbalanced learning**. In _Neural Networks, 
+[7] He, H., Bai, Y., Garcia, E. A., & Li, S. (2008, June). **ADASYN: Adaptive synthetic sampling approach for imbalanced learning**. In _Neural Networks, 
 2008. IJCNN 2008.(IEEE World Congress on Computational Intelligence). IEEE International Joint Conference on_ (pp. 1322-1328). IEEE.
 
-[7] Bunkhumpornpat, C., Sinapiromsaran, K., & Lursinsap, C. (2009). **Safe-level-smote: Safe-level-synthetic minority over-sampling technique for handling the class imbalanced problem**. _Advances in knowledge discovery and data mining_, 475-482.
+[8] Bunkhumpornpat, C., Sinapiromsaran, K., & Lursinsap, C. (2009). **Safe-level-smote: Safe-level-synthetic minority over-sampling technique for handling the class imbalanced problem**. _Advances in knowledge discovery and data mining_, 475-482.
 
-[8] Yen, S. J., & Lee, Y. S. (2009). **Cluster-based under-sampling approaches for imbalanced data distributions**. _Expert Systems with Applications_, 
+[9] Yen, S. J., & Lee, Y. S. (2009). **Cluster-based under-sampling approaches for imbalanced data distributions**. _Expert Systems with Applications_, 
 _36_(3), 5718-5727.
 
-[9] Barua, S., Islam, M. M., Yao, X., & Murase, K. (2014). **MWMOTE--majority 
+[10] Barua, S., Islam, M. M., Yao, X., & Murase, K. (2014). **MWMOTE--majority 
 weighted minority oversampling technique for imbalanced data set learning**. 
 _IEEE Transactions on Knowledge and Data Engineering_, _26_(2), 405-425.
 
-[10] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
+[11] Zhang, H., & Li, M. (2014). **RWO-Sampling: A random walk over-sampling approach to imbalanced data classification**. _Information Fusion_, _20_, 
 99-116.
 
-[11] Rivera, W. A. (2017). **Noise Reduction A Priori Synthetic Over-Sampling 
+[12] Rivera, W. A. (2017). **Noise Reduction A Priori Synthetic Over-Sampling 
 for class imbalanced data sets**. _Information Sciences_, _408_, 146-161.
