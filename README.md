@@ -107,7 +107,7 @@ _IEEE Transactions on systems, Man, and Cybernetics_, (6), 448-452.
 
 [3] Kubat, M., & Matwin, S. (1997, July). **Addressing the curse of imbalanced training sets: one-sided selection**. In _ICML_ (Vol. 97, pp. 179-186).
 
-[4] Laurikkala, J. (2001, July). **Improving identification of difficult small classes by balancing class distribution**. In __Conference on Artificial Intelligence in Medicine in Europe__ (pp. 63-66). Springer, Berlin, Heidelberg.
+[4] Laurikkala, J. (2001, July). **Improving identification of difficult small classes by balancing class distribution**. In _Conference on Artificial Intelligence in Medicine in Europe_ (pp. 63-66). Springer, Berlin, Heidelberg.
 
 [5] Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). 
 **SMOTE: synthetic minority over-sampling technique**. _Journal of artificial intelligence research_, _16_, 321-357.
